@@ -1,5 +1,6 @@
 body{
    width:460px;
+   height: 500px;
 }
 @font-face {
   font-family: 'Material Icons';
@@ -25,4 +26,26 @@ body{
 .value {
   background-color: #40535b;
   word-wrap: break-word;
+}
+.disabled {
+  color: #999d9d;
+}
+.animate-if.ng-enter {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+.animate-if.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.row {
+  margin-bottom: 0px !important;
 }

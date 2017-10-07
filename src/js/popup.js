@@ -1,4 +1,4 @@
-var app = angular.module('extension', ['ngClipboard']);
+var app = angular.module('extension', ['ngClipboard', 'ngAnimate']);
 app.controller('extensionCtrl', ['$scope', 'ngClipboard', function($scope, ngClipboard) {
   $scope.direction = true;
   $scope.updateOutput = function() {
@@ -13,7 +13,5 @@ app.controller('extensionCtrl', ['$scope', 'ngClipboard', function($scope, ngCli
     else
       Materialize.toast(ngClipboard.toClipboard(param) ? 'Result copied to clipboard.' :
         'Unexpected error, please roll over and die.', 2000);
-
-
   };
 }]);

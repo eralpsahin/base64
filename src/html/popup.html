@@ -10,6 +10,7 @@
 
 <body ng-controller="extensionCtrl">
   <script src="../js/angular.min.js"></script>
+  <script src="../js/angular-animate.js"></script>
   <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../js/materialize.min.js"></script>
   <script src="../js/ngClipboard.js"></script>
@@ -21,15 +22,19 @@
           <input id="text" type="text" ng-model="text" ng-change="updateOutput()">
           <label for="text">Input</label>
         </div>
-        <span class="card-title">{{direction ? "Decoded" : "Encoded"}}</span>
-        <div class="row"></div>
-        <p class="value" id="value">{{output}}</p>
+        <span class="card-title" ng-class="{'disabled': !text}">{{direction ? "Decoded" : "Encoded"}}</span>
+        <div class="row" style="height: 115px;">
+          <p class="value" id="value">{{output}}</p>
+          <div class="col s5 offset-s4 animate-if" ng-if="!text">
+            <img src="../../assets/rabbit-bubble.png" alt="elma">
+          </div>
+        </div>
       </div>
       <div class="card-action">
         <div class="switch col s8">
           <label>
                   <span class="white-text">Encode</span>
-                  <input type="checkbox" value="direction" ng-model="direction" ng-change="updateOutput()">
+                  <input type="checkbox" checked ng-model="direction" ng-change="updateOutput()">
                   <span class="lever"></span>
                 <span class="white-text">Decode</span>
                 </label>
