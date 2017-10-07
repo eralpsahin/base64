@@ -1,0 +1,43 @@
+<html ng-app="extension">
+
+<head>
+  <!-- Angular Material style sheet -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="../css/base64.css">
+
+</head>
+
+<body ng-controller="extensionCtrl">
+  <script src="../js/angular.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script src="../js/ngClipboard.js"></script>
+  <script src="../js/popup.js"></script>
+  <div class="row">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <div class="input-field">
+          <input id="text" type="text" ng-model="text" ng-change="updateOutput()">
+          <label for="text">Input</label>
+        </div>
+        <span class="card-title">{{direction ? "Decoded" : "Encoded"}}</span>
+        <div class="row"></div>
+        <p class="value" id="value">{{output}}</p>
+      </div>
+      <div class="card-action">
+        <div class="switch col s8">
+          <label>
+                  <span class="white-text">Encode</span>
+                  <input type="checkbox" value="direction" ng-model="direction" ng-change="updateOutput()">
+                  <span class="lever"></span>
+                <span class="white-text">Decode</span>
+                </label>
+        </div>
+        <a href="#" ng-click="toClipboard(output)">Copy to Clipboard</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
