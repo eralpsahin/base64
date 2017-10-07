@@ -15,7 +15,7 @@ Drag and drop the ```base64.crx``` file into Chrome browser to install the packe
 Go to ```chrome://extensions/``` be sure ```Developer mode``` is checked. Click ```Load unpacked extension```, browse base64 root directory.
 
 ## Demo
-![](https://raw.githubusercontent.com/eralpsahin/base64/master/Base64Helper_Demo_2017-10-07%20at%2022.14.47.gif)
+<img src="https://raw.githubusercontent.com/eralpsahin/base64/master/Base64Helper_Demo_2017-10-07%20at%2022.14.47.gif" width="360">
 
 ## Built With
 * [Materialize](http://materializecss.com) - a CSS Framework based on material design
